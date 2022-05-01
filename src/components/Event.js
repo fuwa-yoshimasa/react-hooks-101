@@ -3,7 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Event = ({ event, dispatch }) => {
     const handleClickDeleteButton = () => {
-        dispatch({ type: "DELETE_EVENT", id: event.id });
+        const result = window.confirm(`削除？ ID=${event.id}`);
+        if (result) {
+            dispatch({ type: "DELETE_EVENT", id: event.id });
+        }
     };
     return (
         <tr>
