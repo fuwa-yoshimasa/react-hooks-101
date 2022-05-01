@@ -1,11 +1,13 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { DELETE_EVENT } from "../actions";
+
 const Event = ({ event, dispatch }) => {
     const handleClickDeleteButton = () => {
         const result = window.confirm(`削除？ ID=${event.id}`);
         if (result) {
-            dispatch({ type: "DELETE_EVENT", id: event.id });
+            dispatch({ type: DELETE_EVENT, id: event.id });
         }
     };
     return (
