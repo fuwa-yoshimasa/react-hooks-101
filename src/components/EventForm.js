@@ -42,7 +42,11 @@ const EventForm = () => {
 
     const deleteAllLogs = (e) => {
         e.preventDefault();
-        dispatch({ type: DELETE_ALL_OPERATION_LOGS });
+
+        const result = window.confirm("全削除？");
+        if (result) {
+            dispatch({ type: DELETE_ALL_OPERATION_LOGS });
+        }
     };
     const unCreatable = title === "" || body === "";
     const unDeletable = state.events.length === 0;
