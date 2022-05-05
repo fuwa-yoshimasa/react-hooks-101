@@ -19,7 +19,7 @@ const Events = () => {
                 </thead>
                 <tbody>
                     {state.events.map((event, index) => {
-                        return <Event key={index} event={event} />;
+                        return <Event key={event.id} event={event} />;
                     })}
                 </tbody>
             </table>
